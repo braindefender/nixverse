@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [ font-manager ];
@@ -12,8 +12,8 @@
       font-awesome
       (nerdfonts.override {
         fonts = [
-          "CascadiaCode"  # Windows Terminal default font
-          "FiraCode"      # Best ligature-featured font
+          "CascadiaCode" # Windows Terminal default font
+          "FiraCode" # Best ligature-featured font
           "JetBrainsMono" # Daily-driver for development
         ];
       })
