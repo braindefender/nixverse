@@ -3,4 +3,5 @@
     os = "nixos";
     channel = "unstable";
   };
+  helix = { };
 }

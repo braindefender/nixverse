@@ -1,6 +1,29 @@
 { pkgs, ... }:
 
 {
+  # 64-Bit system target
+  nixpkgs.hostPlatform = "x86_64-linux";
+
+  # Needed for ZFS configuration // https://search.nixos.org/options?channel=unstable&show=networking.hostId
+  networking.hostId = "b27a47ea";
+
+  boot = {
+    # Before boot
+    initrd = {
+      availableKernelModules = [
+        "xhci_pci"
+        "ahci"
+        "nvme"
+        "usb_storage"
+        "usbhid"
+        "sd_mod"
+      ];
+    };
+  };
+
+  # Intel CPU & Video
+  powerManagement.cpuFreqGovernor = "performance";
+
   boot.initrd.kernelModules = [ "i915" ];
   boot.kernelParams = [
     "i915.modeset=1"

@@ -1,4 +1,4 @@
-{ config, pkgs, }:
+{ pkgs, ... }:
 
 let
   users = [ "root" "brain" ];
@@ -9,7 +9,7 @@ in
 
   environment.systemPackages = with pkgs; [
     nil
-    nixd     # nix language server
+    nixd # nix language server
     nix-tree # tree-like nix store exploration
     nix-index
     nixpkgs-fmt
