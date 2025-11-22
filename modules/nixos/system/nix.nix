@@ -5,7 +5,7 @@ let
 in
 
 {
-  system.stateVersion = "23.05";
+  system.stateVersion = "25.05";
 
   environment.systemPackages = with pkgs; [
     nil
@@ -13,6 +13,7 @@ in
     nix-tree # tree-like nix store exploration
     nix-index
     nixpkgs-fmt
+    comma
   ];
 
   environment.variables = {

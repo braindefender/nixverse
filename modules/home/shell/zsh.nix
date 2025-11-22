@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.zsh = {
@@ -7,6 +7,16 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    # TODO: add zsh-vi-mode
+    initContent = ''
+      export KEYTIMEOUT=1
+
+      # Use vim bindings
+      set -o vi
+
+      # Improved vim bindings
+      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+    '';
+
+    plugins = [ ];
   };
 }

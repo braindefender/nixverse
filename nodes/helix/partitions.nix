@@ -1,6 +1,12 @@
-{ ... }:
+{ pkgs, ... }:
+
+# Note: other ZFS datasets are mounted by ZFS itself.
 
 {
+  # Note: manually set ZFS package to "zfs_unstable"
+  #       because old one comes with outdated core.
+  boot.zfs.package = pkgs.zfs_unstable;
+
   fileSystems = {
     "/boot" = {
       device = "/dev/disk/by-label/BOOT";

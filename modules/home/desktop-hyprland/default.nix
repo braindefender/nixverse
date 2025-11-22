@@ -1,4 +1,4 @@
-{ modules', pkgs, ... }:
+{ pkgs, ... }:
 
 let
   script_startup = pkgs.writeShellScriptBin "start" ''
@@ -12,26 +12,14 @@ let
 in
 
 {
-  imports = [ modules'.desktop-wayland ];
+  imports = [ ../desktop-wayland ];
 
-  osConfig = {
-    environment.systemPackages = with pkgs; [ swww wl-clipboard wev wofi ];
-
-    xdg.portal = {
-      enable = true;
-
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-hyprland
-        xdg-desktop-portal-gtk
-      ];
-
-      config = {
-        common = {
-          default = [ "hyprland" "gtk" ];
-        };
-      };
-    };
-  };
+  home.packages = with pkgs; [
+    swww
+    wl-clipboard
+    wev
+    wofi
+  ];
 
   programs.zsh.loginExtra = ''
     if [ -z "''${DISPLAY}" ] && [ $(tty) = "/dev/tty1" ]; then
@@ -72,7 +60,6 @@ in
         "$mod, F, fullscreen"
         "$mod SHIFT, F, forcerendererreload"
         "$mod SHIFT, R, exec, ${pkgs.hyprland}/bin/hyprctl reload"
-        ", Print, exec, ${pkgs.watershot}/bin/watershot"
       ];
 
       bindm = [
@@ -85,8 +72,11 @@ in
         follow_mouse = 1; # https://wiki.hyprland.org/Configuring/Variables/#follow-mouse-cursor
         repeat_delay = 250;
         numlock_by_default = 1;
-        kb_layout = "ULO";
-        kb_file = "${pkgs.xkeyboard_config.outPath}/share/X11/xkb/symbols/ULO";
+        kb_model = "ulo";
+        kb_layout = "ulo";
+        kb_variant = "";
+        kb_options = "lv3:ralt_switch";
+        kb_file = "/etc/X11/xkb/symbols/ulo";
       };
 
       general = {

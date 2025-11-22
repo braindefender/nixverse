@@ -2,15 +2,13 @@
 
 let
   gpuIds = [
-    "10de:2216" # NVidia RTX 3080 Video
-    "10de:1aef" # NVidia RTX 3080 Audio
+    "10de:2216" # NVidia RTX 3080 / Video
+    "10de:1aef" # NVidia RTX 3080 / Audio
   ];
 in
 
 {
   boot = {
-    zfs.package = pkgs.zfs_unstable;
-
     kernelModules = [
       "kvm-intel"
       "vfio_virqfd"

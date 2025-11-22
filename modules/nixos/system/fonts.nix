@@ -10,13 +10,9 @@
       noto-fonts-emoji
       cantarell-fonts
       font-awesome
-      (nerdfonts.override {
-        fonts = [
-          "CascadiaCode" # Windows Terminal default font
-          "FiraCode" # Best ligature-featured font
-          "JetBrainsMono" # Daily-driver for development
-        ];
-      })
+      nerd-fonts.caskaydia-cove # Windows Terminal default font
+      nerd-fonts.fira-code # Best ligature-featured font
+      nerd-fonts.jetbrains-mono # Daily-driver for development
     ];
 
     fontconfig = {

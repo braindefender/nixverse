@@ -2,21 +2,41 @@
 
 {
   environment.systemPackages = with pkgs; [
-    vim
-    helix
+    # - Common
     btop
-    broot
-    zellij
+    fd
+    jq
+    killall
     ripgrep
-    firefox
-    gnome-tweaks
-    # discord
-    # telegram-desktop
-    # orca-slicer
-    # blender
-    # LycheeSlicer
-    # vlc
-    # obsidian
-    # vivaldi
+
+    # - File Management
+    broot
+    du-dust
+    rsync
+    trashy
+    unzip
+    zellij
+
+    # - Editors
+    vim
+    neovim
+    obsidian
+    zed-editor
+
+    # - Multimedia
+    imagemagick
+    ffmpeg-full
+    xclip
+    feh
+
+    # - Network
+    curl
+    wget
+
+    # - HW Utilities
+    usbutils
+    pciutils
+    smartmontools
+    wirelesstools
   ];
 }

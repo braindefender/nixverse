@@ -1,0 +1,53 @@
+{ ... }:
+
+let
+  zMotions = {
+    "k" = "scroll_down";
+    "l" = "scroll_up";
+  };
+  gMotions = {
+    "j" = "goto_line_start";
+    "~" = "goto_line_end";
+  };
+in
+
+{
+  programs.helix = {
+    enable = true;
+
+    settings = {
+      theme = "ayu_mirage";
+
+      editor = {
+        line-number = "relative";
+        cursorline = true;
+        true-color = true;
+
+        cursor-shape.insert = "bar";
+        indent-guides.render = true;
+      };
+
+      keys.normal = {
+        esc = [ "collapse_selection" "keep_primary_selection" ];
+        "$" = [ "ensure_selections_forward" "extend_to_line_end" ];
+        "j" = "move_char_left";
+        "k" = "move_line_down";
+        "l" = "move_line_up";
+        "~" = "move_char_right";
+        "h" = "switch_case";
+        "z" = zMotions;
+        "g" = gMotions;
+      };
+
+      keys.select = {
+        "j" = "extend_char_left";
+        "k" = "extend_line_down";
+        "l" = "extend_line_up";
+        "~" = "extend_char_right";
+        "h" = "switch_case";
+        "z" = zMotions;
+        "g" = gMotions;
+      };
+    };
+  };
+}

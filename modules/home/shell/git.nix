@@ -11,7 +11,7 @@
     userName = "Nikita Shirokov";
     userEmail = "braindefender@gmail.com";
 
-    ignores = [ "*~" "*.swp" ];
+    ignores = [ "*~" "*.swp" ".DS_Store" "._.DS_Store" ];
 
     extraConfig = {
       init.defaultBranch = "master";

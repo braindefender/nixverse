@@ -9,14 +9,17 @@
   };
 
   networking.firewall.enable = false;
-  networking.networkmanager.enable = true;
-  networking.networkmanager.enableStrongSwan = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = with pkgs; [
+      networkmanager-strongswan
+      networkmanager-l2tp
+      networkmanager-openvpn
+    ];
+  };
 
   environment.systemPackages = with pkgs; [
     networkmanager
-    networkmanager-l2tp
-    networkmanager-openvpn
-    networkmanager_strongswan
     networkmanagerapplet
   ];
 
