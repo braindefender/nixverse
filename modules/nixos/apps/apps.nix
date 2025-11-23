@@ -23,7 +23,7 @@
     # obs-studio
 
     # - Network
-    nekoray
+    throne
 
     # - Social
     # discord

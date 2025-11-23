@@ -7,7 +7,7 @@
     packages = with pkgs; [
       corefonts
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       cantarell-fonts
       font-awesome
       nerd-fonts.caskaydia-cove # Windows Terminal default font

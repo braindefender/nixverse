@@ -11,7 +11,7 @@
 
     # - File Management
     broot
-    du-dust
+    dust
     rsync
     trashy
     unzip

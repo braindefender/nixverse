@@ -5,7 +5,7 @@ let
     q = "exit";
     c = "clear";
     v = "nvim";
-    dust = "${pkgs.du-dust}/bin/dust -X .git -X node_modules";
+    dust = "${pkgs.dust}/bin/dust -X .git -X node_modules";
     grep = "${pkgs.gnugrep}/bin/grep --color='always'";
 
     # Git

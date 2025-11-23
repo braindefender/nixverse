@@ -8,16 +8,17 @@
 
     package = pkgs.gitFull;
 
-    userName = "Nikita Shirokov";
-    userEmail = "braindefender@gmail.com";
-
-    ignores = [ "*~" "*.swp" ".DS_Store" "._.DS_Store" ];
-
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Nikita Shirokov";
+        email = "braindefender@gmail.com";
+      };
       init.defaultBranch = "master";
       pull.rebase = true;
       push.autoSetupRemote = true;
       credential.helper = "libsecret";
     };
+
+    ignores = [ "*~" "*.swp" ".DS_Store" "._.DS_Store" ];
   };
 }
