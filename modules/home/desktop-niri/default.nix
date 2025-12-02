@@ -27,6 +27,10 @@ in
       gestures.hot-corners.enable = true;
       prefer-no-csd = true;
 
+      spawn-at-startup = [{
+        command = [ "noctalia-shell" ];
+      }];
+
       input = {
         workspace-auto-back-and-forth = true;
 

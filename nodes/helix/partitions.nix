@@ -6,6 +6,7 @@
   # Note: manually set ZFS package to "zfs_unstable"
   #       because old one comes with outdated core.
   boot.zfs.package = pkgs.zfs_unstable;
+  boot.extraModprobeConfig = "options zfs zfs_dirty_data_max=67108864";
 
   fileSystems = {
     "/boot" = {
