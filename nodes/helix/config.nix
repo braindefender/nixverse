@@ -11,7 +11,8 @@
     ../../modules/nixos/visuals
     ../../modules/nixos/universal-layout
     ../../modules/nixos/boot-grub.nix
-    ../../modules/nixos/desktop-kde.nix
+    ../../modules/nixos/display-manager.nix
+    # ../../modules/nixos/desktop-gnome.nix
 
     ../../modules/nixos/apps/apps.nix
     ../../modules/nixos/devtools.nix
