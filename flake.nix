@@ -21,7 +21,7 @@
     # Copyparty File Sharing
     copyparty.url = "github:9001/copyparty";
     # Niri Window Manager
-    niri-flake = {
+    niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -38,7 +38,7 @@
     , vscode-server
     , grub2-themes
     , copyparty
-    , niri-flake
+    , niri
     , ...
     }: {
       nixosConfigurations.helix = nixpkgs.lib.nixosSystem {
@@ -54,7 +54,7 @@
           {
             nixpkgs.overlays = [
               copyparty.overlays.default
-              niri-flake.overlays.niri
+              niri.overlays.niri
             ];
           }
           # Host Modules
@@ -65,7 +65,8 @@
             home-manager.useUserPackages = true;
             home-manager.users.brain = {
               imports = [
-                niri-flake.homeModules.niri
+                inputs.noctalia.homeModules.default
+                niri.homeModules.niri
                 ./homes/brain/home.nix
               ];
             };

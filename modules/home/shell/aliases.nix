@@ -16,12 +16,13 @@ let
     fetch = "git fetch";
     commit = "git commit -a -m";
 
-    lg = "lazygit";
-    lf = "joshuto";
+    lg = "${pkgs.lazygit}/bin/lazygit";
+    lf = "${pkgs.joshuto}/bin/joshuto";
 
     # NixOS
     cleanup = "sudo nix-collect-garbage --delete-older-than 7d";
     bloat = "nix path-info -Sh /run/current-system";
+    nrs = "sudo nixos-rebuild switch --flake .#helix";
 
     # ZFS
     zlist = "sudo zfs list | grep --invert-match 'vpool/root/'";

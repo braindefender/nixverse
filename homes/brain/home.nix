@@ -8,6 +8,7 @@
     # ../../modules/home/desktop-hyprland
     ../../modules/home/editors
     ../../modules/home/shell
+    ../../modules/home/shell-noctalia
     ../../modules/home/common.nix
     ../../modules/home/kitty.nix
   ];

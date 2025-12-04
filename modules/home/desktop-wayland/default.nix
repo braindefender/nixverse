@@ -2,9 +2,11 @@
 
 {
   home.packages = with pkgs; [
-    swww
-    wev
+    # Launcher
+    fuzzel
+    # Clipboard manager
     wl-clipboard
-    wofi
+    # Debug
+    wev
   ];
 }

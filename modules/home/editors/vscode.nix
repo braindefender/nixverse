@@ -16,6 +16,10 @@ in
     noremap h ~
   '';
 
+  home.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = true;
@@ -129,7 +133,7 @@ in
         "editor.scrollbar.horizontalScrollbarSize" = 8;
 
         # Others
-        "editor.minimap.autohide" = true;
+        "editor.minimap.autohide" = "mouseover";
         "editor.minimap.showSlider" = "always";
         "editor.minimap.renderCharacters" = false;
         "editor.accessibilitySupport" = "off";

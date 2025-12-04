@@ -20,6 +20,7 @@
     # - Multimedia
     vlc
     gimp
+    yandex-music
     # obs-studio
 
     # - Network
