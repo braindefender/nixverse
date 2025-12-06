@@ -45,7 +45,7 @@
         "audio"
         "networkmanager"
         "docker"
-        "libvirt"
+        "libvirtd"
       ];
     };
   };

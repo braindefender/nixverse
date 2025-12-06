@@ -1,13 +1,13 @@
 { config, pkgs, ... }:
 
 let
-  struts = 16;
   gaps = 16;
 in
 
 {
-
   imports = [ ../desktop-wayland ];
+
+  home.packages = with pkgs; [ nirius ];
 
   programs.niri = {
     enable = true;
@@ -45,6 +45,9 @@ in
         {
           command = [ "nm-applet" ];
         }
+        {
+          command = [ "niriusd" ];
+        }
       ];
 
       input = {
@@ -60,13 +63,6 @@ in
 
       layout = {
         gaps = gaps;
-
-        struts = {
-          top = struts;
-          left = struts;
-          right = struts;
-          bottom = struts;
-        };
 
         center-focused-column = "on-overflow";
 
@@ -147,6 +143,31 @@ in
           # open-maximized-to-edges = true;
           open-fullscreen = true;
           open-floating = true;
+        }
+        {
+          matches = [
+            {
+              app-id = "^Throne$";
+            }
+          ];
+          default-column-width.fixed = 800;
+        }
+        {
+          matches = [
+            {
+              app-id = ''^org\.telegram\.desktop$'';
+            }
+            {
+              app-id = ''\.virt-manager-wrapped'';
+            }
+          ];
+          excludes = [
+            {
+              app-id = ''^org\.telegram\.desktop$'';
+              title = "^Media viewer$";
+            }
+          ];
+          default-column-width.proportion = 1. / 6.;
         }
       ];
 

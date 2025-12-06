@@ -34,7 +34,7 @@
       };
 
       private = {
-        "path" = "/nexus";
+        "path" = "/data";
         "browsable" = "yes";
         "read only" = "no";
         "create mask" = "0644";

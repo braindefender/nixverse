@@ -74,6 +74,7 @@ in
         "extensions.autoCheckUpdates" = false;
         "extensions.ignoreRecommendations" = true;
         "gitlens.plusFeatures.enabled" = false;
+        "chat.disableAIFeatures" = true;
 
         # Window
         "window.titleBarStyle" = "custom";
