@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     # - Common
+    gh
     just
     tokei
     devenv

@@ -11,5 +11,6 @@
     ../../modules/home/desktop-entries
     ../../modules/home/common.nix
     ../../modules/home/kitty.nix
+    ../../modules/home/superfile.nix
   ];
 }

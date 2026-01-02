@@ -54,7 +54,7 @@ in
         warp-mouse-to-focus.enable = true;
 
         keyboard = {
-          numlock = false;
+          numlock = true;
           xkb = {
             file = "${../../nixos/universal-layout/ul-ortho-combo.xkb}";
           };

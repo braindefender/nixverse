@@ -3,8 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     # - 3D Printing
-    blender
-    openscad
+    # blender
+    # openscad
     # orca-slicer
 
     # - Browsers
@@ -19,15 +19,15 @@
 
     # - Multimedia
     vlc
-    gimp
+    # gimp
     yandex-music
     # obs-studio
 
-    # - Network
-    throne
-
     # - Social
-    # discord
+    discord
     telegram-desktop
+
+    # - Utility
+    libicns
   ];
 }

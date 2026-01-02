@@ -32,4 +32,10 @@
   environment.etc."strongswan.conf" = {
     text = '''';
   };
+
+  # Throne VPN
+  programs.throne = {
+    enable = true;
+    tunMode.enable = true;
+  };
 }

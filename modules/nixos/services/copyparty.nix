@@ -26,7 +26,7 @@
 
     volumes = {
       "/" = {
-        path = "/nexus";
+        path = "/data";
         access = {
           r = "*";
           A = [ "brain" ];
