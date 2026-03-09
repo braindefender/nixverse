@@ -11,15 +11,15 @@ in
     nil
     nixd # nix language server
     nix-tree # tree-like nix store exploration
-    nix-index
     nixpkgs-fmt
-    comma
   ];
 
   environment.variables = {
     NIXPKGS_ALLOW_UNFREE = "1";
     NIXPKGS_ALLOW_INSECURE = "1";
   };
+
+  programs.nix-index-database.comma.enable = true;
 
   nix = {
     settings = {

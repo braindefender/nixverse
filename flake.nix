@@ -14,6 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # VSCode Remote SSH Server
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     # GRUB 2 Themes
@@ -35,6 +40,7 @@
   outputs =
     inputs @ { nixpkgs
     , home-manager
+    , nix-index-database
     , vscode-server
     , grub2-themes
     , copyparty
@@ -44,9 +50,14 @@
       nixosConfigurations.helix = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
+        specialArgs = {
+          hm = home-manager.users.brain;
+        };
+
         modules = [
           # NixOS Modules
           home-manager.nixosModules.home-manager
+          nix-index-database.nixosModules.default
           vscode-server.nixosModules.default
           grub2-themes.nixosModules.default
           copyparty.nixosModules.default

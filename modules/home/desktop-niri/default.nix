@@ -8,6 +8,7 @@ in
   imports = [ ../desktop-wayland ];
 
   home.packages = with pkgs; [ nirius ];
+  home.sessionVariables = { DISPLAY = ":0"; };
 
   programs.niri = {
     enable = true;
@@ -168,6 +169,22 @@ in
             }
           ];
           default-column-width.proportion = 1. / 6.;
+        }
+        {
+          matches = [
+            {
+              app-id = "^mpv$";
+            }
+          ];
+          open-floating = true;
+          min-height = 1280;
+          max-height = 1280;
+          max-width = 3000;
+          default-floating-position = {
+            x = 0;
+            y = 40;
+            relative-to = "top";
+          };
         }
       ];
 

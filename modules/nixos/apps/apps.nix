@@ -19,6 +19,7 @@
 
     # - Multimedia
     vlc
+    mpv
     # gimp
     yandex-music
     # obs-studio

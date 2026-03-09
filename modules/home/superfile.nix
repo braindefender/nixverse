@@ -1,9 +1,26 @@
-{ ... }:
+{ pkgs, lib, ... }:
 
 {
   programs.superfile = {
     enable = true;
+
+    package = pkgs.superfile.overrideAttrs (oldAttrs: {
+      version = "latest";
+      src = pkgs.fetchFromGitHub {
+        owner = "yorukot";
+        repo = "superfile";
+        rev = "2874ef7f5ef2e3cda78802ce78c6246349dfd37b";
+        hash = "sha256-eDPoLvQT6chTRt8hE36Xh6sHnUt5e2Fo0jAg2aPYVxY=";
+      };
+      vendorHash = "sha256-+1YcEEoCD091HUMTbimgC1oVkOwVxElRMhMDLRzYLxI=";
+      nativeBuildInputs = [ pkgs.exiftool pkgs.zoxide pkgs.go ];
+      checkFlags = [
+        "-skip=^Test"
+      ];
+    });
+
     firstUseCheck = false;
+
     pinnedFolders = [
       {
         name = "Data";
@@ -18,6 +35,7 @@
         location = "/mnt/minis/private";
       }
     ];
+
     settings = {
       debug = true;
       ignore_missing_fields = true;
@@ -25,6 +43,7 @@
       theme = "catppuccin";
       code_previewer = "bat";
     };
+
     hotkeys = {
       quit = [ "q" ];
       cd_quit = [ "Q" ];
@@ -111,7 +130,7 @@
         "ctrl+v"
       ];
       delete_items = [ "ctrl+d" ];
-      permanently_delete_items = ["D"];
+      permanently_delete_items = [ "D" ];
     };
   };
 }

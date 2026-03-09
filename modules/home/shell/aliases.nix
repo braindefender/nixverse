@@ -18,7 +18,7 @@ let
 
     lg = "${pkgs.lazygit}/bin/lazygit";
     lf = "${pkgs.joshuto}/bin/joshuto";
-    spf = "${pkgs.superfile}/bin/superfile";
+    spf = "superfile";
 
     # NixOS
     cleanup = "sudo nix-collect-garbage --delete-older-than 7d";

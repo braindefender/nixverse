@@ -12,9 +12,9 @@
     ../../modules/nixos/universal-layout
     ../../modules/nixos/boot-grub.nix
     ../../modules/nixos/display-manager.nix
-    # ../../modules/nixos/desktop-gnome.nix
 
     ../../modules/nixos/apps/apps.nix
+    ../../modules/nixos/apps/steam.nix
     ../../modules/nixos/devtools.nix
     ../../modules/nixos/packages.nix
     ../../modules/nixos/work-te.nix

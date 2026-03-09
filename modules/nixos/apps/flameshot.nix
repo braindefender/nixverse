@@ -1,7 +1,7 @@
 { ... }:
 
 let
-  savePath = "/nexus/images/screens";
+  savePath = "/data/images/screens";
 in
 
 {

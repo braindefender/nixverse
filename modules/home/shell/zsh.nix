@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.zsh = {
@@ -6,6 +6,8 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+
+    dotDir = "${config.xdg.configHome}/zsh";
 
     initContent = ''
       export KEYTIMEOUT=1

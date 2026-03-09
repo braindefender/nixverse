@@ -5,15 +5,17 @@
     enable = true;
 
     extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
     ];
 
     config = {
       common = {
-        default = [ "hyprland" "gtk" ];
+        default = [ "gtk" ];
       };
     };
   };
+
+  environment.systemPackages = with pkgs; [ xwayland-satellite ];
+  environment.variables = { DISPLAY = ":0"; };
 
 }
